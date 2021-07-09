@@ -9,7 +9,7 @@ import android.widget.Toast;
 
 import com.example.hellotoast.R;
 
-public class MainActivity extends AppCompatActivity {
+public class Main extends AppCompatActivity {
 
     //클래스 선언
     TextView textView;
