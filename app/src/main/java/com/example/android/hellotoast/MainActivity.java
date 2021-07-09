@@ -1,6 +1,7 @@
 package com.example.android.hellotoast;
 
 import androidx.appcompat.app.AppCompatActivity;
+
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
@@ -9,30 +10,31 @@ import android.widget.Toast;
 import com.example.hellotoast.R;
 
 public class MainActivity extends AppCompatActivity {
-    private int mCount = 0;
-    private TextView mShowCount;
+
+    //클래스 선언
+    TextView textView;
+    int count=0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        mShowCount = TextView.findViewById(R.id.show_count);
-    }
-    public void showToast(View view) {
-        Toast toast = Toast.makeText(this,R.string.toast_message,Toast.LENGTH_SHORT);
-        toast.show();
-    }
-    public void countUp(View view) {
-        mCount++;
-        if (mShowCount != null)
-           // mShowCount.setText(Integer.toString(mCount));
+        setContentView(R.layout.layout);
 
-            changeText();
+        //세팅 ? 연결 ?
+        textView=findViewById(R.id.txtCount);
+
+
     }
-    private void changeText(){
-        changeText2();
+
+    public void onToastClick(View view){
+        Toast.makeText(this, "Hello Toast", Toast.LENGTH_SHORT).show();
     }
-    private void changeText2(){
-        mShowCount.setText(Integer.toString(mCount));
+
+    public void onCountClick(View view){
+        count++;
+
+        textView.setText(count+""); //TextView 클래스에는 기본적으로 setter, getter가 선언되어있다.
+
+
     }
 }
